@@ -19,4 +19,4 @@ include_once "../Model/model-participate.php";
 
 
 
-include_once "../../index.php";
+include_once "../../public/index.php";

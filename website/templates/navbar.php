@@ -3,7 +3,7 @@
      <div class="row align-items-center">
          <!-- Logo -->
          <div class="col-6">
-             <a href="controller-index.php" class="mb-0 text-decoration-none h4">Nocturne</a>
+             <a href="controller-index.php" class="mb-0 text-decoration-none h1 secret-sauce">Nocturne</a>
          </div>
          <!-- Top-Right Favorite Icon -->
          <div class="col-6 text-end">
@@ -11,22 +11,20 @@
          </div>
      </div>
  </div>
- <div class="container-fluid d-none d-md-block py-3">
-     <div class="row align-items-center">
+
+
+ <div class="container-fluid d-none d-md-block py-3 sticky-top">
+     <div class="d-flex align-items-center justify-content-between">
          <!-- Logo -->
-         <div class="col-md-4">
-             <a href="controller-index.php" class="mb-0 text-decoration-none h4">Nocturne</a>
+         <div class="">
+             <a href="controller-index.php" class="mb-0 text-decoration-none h2 secret-sauce">Nocturne.</a>
          </div>
-         <!-- Search Bar -->
-         <form class="col-md-4 d-flex gap-2" action="controller-search.php?" >
-             <input type="text" class="form-control" placeholder="Rechercher un événement" name="event">
-             <button class="px-3 btn btn-outline-light"><i class="bi bi-search"></i></button>
-        </form>
          <!-- Top-Right Favorite Icon -->
-         <div class="col-md-4 text-end">
-             <a class="btn btn-outline-light"><i class="bi bi-heart"></i> Favoris</a>
-             <a class="btn btn-outline-light"><i class="bi bi-person"></i> Profil</a>
-             <a class="btn btn-outline-danger" href="controller-deconnexion.php"><i class="bi bi-person"></i> Se déconnecter</a>
+         <div class="d-flex gap-2 justify-content-end align-items-center">
+         <a class="btn btn-outline-light border-0 rounded-pill fw-semibold syne" href="controller-search.php"><i class="bi bi-search m-2"></i>Rechercher</a>
+             <a class="btn btn-outline-light border-0 rounded-pill fw-semibold syne"><i class="bi bi-heart m-2"></i>Favoris</a>
+             <a class="btn btn-outline-light border-0 rounded-pill fw-semibold syne"><i class="bi bi-person m-2"></i>Profil</a>
+             <a class="btn btn-outline-danger rounded-pill syne" href="controller-deconnexion.php">Se déconnecter</a>
          </div>
      </div>
  </div>

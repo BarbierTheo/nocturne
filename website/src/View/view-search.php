@@ -3,9 +3,17 @@
 
 
 <!-- Search Results Title -->
-<div class="container mt-4">
-    <!-- <h3>Résultats pour "Nocturne"</h3>-->
-    <span class="h3"><?= isset($_GET['event']) && !empty($_GET['event']) ? "Résultat pour '" . $_GET['event'] . "'" : "" ?></span>
+<div class="mt-4">
+    <form method="get">
+        <div class="d-flex w-75 mx-auto gap-2 mb-3">
+            <input type="text" name="event" class="form-control" placeholder="Recherchez" required>
+            <button class="btn btn-outline-light">
+                Rechercher
+            </button>
+        </div>
+    </form>
+
+    <span class="h3 px-4 secret-sauce"><?= isset($_GET['event']) && !empty($_GET['event']) ? "Résultat pour '" . $_GET['event'] . "'" : "" ?></span>
 </div>
 
 <!-- Search Results - Event Cards -->
@@ -15,10 +23,10 @@
         <?php foreach ($searchPosts as $value) { ?>
 
             <div class="col-12 col-md-4 mb-4">
-                <a href="controller-event.php?event=<?= $value['event_id'] ?>" class="card bg-dark text-light text-decoration-none">
+                <a href="controller-event.php?event=<?= $value['event_id'] ?>" class="bg-dark text-light text-decoration-none">
                     <img src="../../assets/img/eventimg/<?= $value['event_img'] ?>" alt="" class="rounded-3 w-100 object-fit-cover">
-                    <div class="card-body">
-                        <p class="card-title h5"><?= $value['event_name'] ?></p>
+                    <div class="mt-2">
+                        <p class="h5 secret-sauce"><?= $value['event_name'] ?></p>
                         <div class="d-flex justify-content-between">
                             <small><i class="bi bi-calendar-event"></i> <?= $value['event_date'] ?></small>
                             <small><i class="bi bi-geo-alt"></i> <?= $value['event_emplacement'] ?></small>

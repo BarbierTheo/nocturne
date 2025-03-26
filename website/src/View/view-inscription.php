@@ -2,9 +2,9 @@
 
 
 
-<div class="col-md-5 mx-auto mt-2 p-4">
-    <h2 class="text-center mb-3 display-5 text-light">Inscription</h2>
-    <form method="post">
+<div class="fullscreen">
+    <h2 class="text-center h1 secret-sauce mb-4">Inscription</h2>
+    <form method="post" class="minform">
         <div class="mb-3">
             <label for="lastname" class="form-label text-light">Nom:</label>
             <input type="text" name="firstname" class="form-control" id="lastname" placeholder="Entrez votre nom" required>

@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Syne:wght@700&display=swap');
+
+body{
+font-family: "Inter";
+
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.minform {
+    width: 90%;
+    max-width: 30rem;
+}
+#heroheader {
+    height: 60vh;
+    background-color: #201a23;
+}
+
+.secret-sauce {
+    font-family: "Syne", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .syne {
+    font-family: "Syne", sans-serif;
+    font-optical-sizing: auto;
+  }
