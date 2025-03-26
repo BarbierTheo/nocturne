@@ -21,7 +21,7 @@
         <button type="submit" class="btn btn-primary w-100">Se connecter</button>
     </form>
     <p class="text-center mt-3">
-        <a href="#" class="text-light">S'inscrire</a>
+        <a href="controller-inscription.php" class="text-light">S'inscrire</a>
     </p>
 </div>
 

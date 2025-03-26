@@ -43,7 +43,7 @@
         <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
     </form>
     <p class="text-center mt-3">
-        <a href="#" class="text-light">Déjà inscrit ? Se connecter</a>
+        <a href="controller-connexion.php" class="text-light">Déjà inscrit ? Se connecter</a>
     </p>
 </div>
 

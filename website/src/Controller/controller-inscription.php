@@ -124,8 +124,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($stmt->execute()) {
 
-            header("Location: controller-confirmation.php");
+            header("Location: controller-validate.php");
             exit;
+            
         }
 
         $pdo = '';
