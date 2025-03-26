@@ -1,6 +1,11 @@
 <?php
 include_once "../../config.php";
+session_start();
 
+if (isset($_SESSION['user_id'])) {
+    header('Location: controller-index.php');
+    exit;
+}
 
 $regexname = "/[a-zñÑ\-\_0-9áéíóúÁÉÍÓÚ]{3,20}/i";
 $classicregex = "/^(?=.{3,20}$)(?![_.-])(?!.*[_.-]{2})[a-zA-Z0-9_-]+([^._-])$/";

@@ -27,4 +27,17 @@ class Participate {
         return $participate;
     }
 
+    public static function countParticipants($event_id)
+    {
+        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "SELECT count(`user_id`) AS `total` FROM `user_participate_event`
+                NATURAL JOIN `users`
+                WHERE `event_id` = " . $event_id;
+        $stmt = $pdo->query($sql);
+        $participate = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $participate['total'];
+    }
+
 }

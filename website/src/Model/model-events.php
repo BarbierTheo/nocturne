@@ -18,7 +18,8 @@ class Events {
         $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT * FROM `events` 
+        $sql = "SELECT * FROM `events`
+                ORDER BY event_date ASC
                 LIMIT " . $howMany;
         $stmt = $pdo->query($sql);
         $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -40,5 +41,17 @@ class Events {
 
     }
 
+    public static function showAllTags()
+    {
+        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "SELECT `tag` FROM `tags`
+                NATURAL JOIN `event_tags`";
+        $stmt = $pdo->query($sql);
+        $tags = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $tags;
+
+    }
 
 }
