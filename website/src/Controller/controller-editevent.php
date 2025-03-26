@@ -8,26 +8,15 @@ include_once "../Model/model-participate.php";
 include_once "../../config.php";
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
-    header('Location: controller-connexion.php');
-    exit;
-}
-
 if(isset($_GET['event']) AND !empty($_GET['event']) AND is_numeric($_GET['event'])) {
-
     $event = Events::showEvent($_GET['event']);
-
     if (empty($event)){
         header('location: controller-index.php');
         exit;
     }
-
-
 } else {
-
     header('location: controller-index.php');
     exit;
-
 }
 
 
@@ -36,4 +25,6 @@ if(isset($_GET['event']) AND !empty($_GET['event']) AND is_numeric($_GET['event'
 
 
 
-include_once "../View/view-event.php";
+
+
+include_once "../View/view-editevent.php";

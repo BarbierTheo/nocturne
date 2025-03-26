@@ -7,24 +7,25 @@
         <div class="col-12 col-md-8">
             <h2 class="mb-4">Ajouter un événement</h2>
 
-            <form>
+            <form method="post" enctype="multipart/form-data" novalidate>
                 <!-- Nom de l'événement -->
                 <div class="mb-3">
                     <label class="form-label">Nom de l'événement</label>
-                    <input type="text" class="form-control bg-dark text-light border-secondary" required>
-                    <small class="text-danger">test</small>
+                    <input type="text" class="form-control bg-dark text-light border-secondary" required name="name">
+                    <small class="text-danger"><?= $errors['name'] ?? "" ?></small>
                 </div>
 
 
-                <!-- Nom de l'événement -->
+                <!-- Genre de l'événement -->
                 <div class="mb-3">
                     <label for="exampleDataList" class="form-label">Genre de l'évènement</label>
-                    <input class="form-control bg-dark text-light border-secondary" list="tagsList" id="tags">
+                    <input class="form-control bg-dark text-light border-secondary" list="tagsList" id="tags" name="tag">
                     <datalist id="tagsList">
                         <?php foreach (Events::showAllTags() as $value) { ?>
                             <option value="<?= $value['tag'] ?>">
                             <?php  } ?>
                     </datalist>
+                    <small class="text-danger"><?= $errors['tag'] ?? "" ?></small>
                 </div>
 
 
@@ -33,44 +34,52 @@
                     <!-- Date -->
                     <div class="mb-3 w-50">
                         <label class="form-label">Date de l'évènement</label>
-                        <input type="date" class="form-control bg-dark text-light border-secondary" required>
+                        <input type="date" class="form-control bg-dark text-light border-secondary" required name="date">
+                        <small class="text-danger"><?= $errors['date'] ?? "" ?></small>
                     </div>
 
                     <!-- Heure -->
                     <div class="mb-3 w-50">
                         <label class="form-label">Heure de l'évènement</label>
-                        <input type="time" class="form-control bg-dark text-light border-secondary" required>
+                        <input type="time" class="form-control bg-dark text-light border-secondary" required name="hour">
+                        <small class="text-danger"><?= $errors['hour'] ?? "" ?></small>
                     </div>
-                    
-                </div>
-                <!-- Lieux -->
-                <div class="mb-3">
-                    <label class="form-label">Lieu de l'évènement</label>
-                    <input type="text" class="form-control bg-dark text-light border-secondary" required>
+
                 </div>
 
                 <!-- Prix -->
                 <div class="mb-3">
                     <label class="form-label">Prix de l'évènement (€)</label>
-                    <input class="form-control bg-dark text-light border-secondary">
+                    <input class="form-control bg-dark text-light border-secondary" name="price">
+                    <small class="text-danger"><?= $errors['price'] ?? "" ?></small>
                 </div>
 
                 <!-- Description -->
                 <div class="mb-3">
                     <label class="form-label">Description de l'évènement</label>
-                    <textarea class="form-control bg-dark text-light border-secondary" required></textarea>
+                    <textarea class="form-control bg-dark text-light border-secondary" required name="description"></textarea>
+                    <small class="text-danger"><?= $errors['description'] ?? "" ?></small>
                 </div>
 
                 <!-- Emplacement de l'évènement -->
                 <div class="mb-3">
                     <label class="form-label">Emplacement de l'évènement</label>
-                    <input type="text" class="form-control bg-dark text-light border-secondary" required>
+                    <input type="text" class="form-control bg-dark text-light border-secondary" required name="place">
+                    <small class="text-danger"><?= $errors['place'] ?? "" ?></small>
                 </div>
 
                 <!-- Adresse exact -->
                 <div class="mb-3">
                     <label class="form-label">Adresse exacte de l'évènement</label>
-                    <input type="text" class="form-control bg-dark text-light border-secondary" required>
+                    <input type="text" class="form-control bg-dark text-light border-secondary" required name="address">
+                    <small class="text-danger"><?= $errors['address'] ?? "" ?></small>
+                </div>
+
+                <!-- Image -->
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Image de l'évènement</label>
+                    <input class="form-control bg-dark text-light border-secondary" type="file" id="formFile" name="image">
+                    <small class="text-danger"><?= $errors['image'] ?? "" ?></small>
                 </div>
 
                 <!-- Submit Button -->
@@ -85,4 +94,5 @@
 </div>
 
 
+<?php include_once "../../templates/visualfooter.php" ?>
 <?php include_once "../../templates/footer.php" ?>
