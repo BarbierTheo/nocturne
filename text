@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "titre": "Concert Rock en Bord de Mer",
+        "date": "2025-07-10",
+        "lieu": "Plage du Havre",
+        "prix": "25€",
+        "categorie": "Concert",
+        "image": "assets/img/concert-rock.jpg",
+        "description": "Un concert en plein air avec des groupes locaux et internationaux de la scène rock."
+    },
+    {
+        "id": 2,
+        "titre": "Soirée Jazz au Fort de Tourneville",
+        "date": "2025-06-22",
+        "lieu": "Fort de Tourneville",
+        "prix": "18€",
+        "categorie": "Concert",
+        "image": "assets/img/concert-jazz.jpg",
+        "description": "Une soirée immersive avec des artistes de jazz reconnus, dans un cadre historique unique."
+    },
+    {
+        "id": 3,
+        "titre": "Spectacle de Théâtre - \"Le Malade Imaginaire\"",
+        "date": "2025-05-15",
+        "lieu": "Théâtre de l’Hôtel de Ville",
+        "prix": "30€",
+        "categorie": "Théâtre",
+        "image": "assets/img/theatre-moliere.jpg",
+        "description": "Une représentation moderne du classique de Molière, revisitée par une troupe talentueuse."
+    },
+    {
+        "id": 4,
+        "titre": "Ballet Classique - \"Le Lac des Cygnes\"",
+        "date": "2025-09-12",
+        "lieu": "Le Volcan, Scène Nationale du Havre",
+        "prix": "45€",
+        "categorie": "Danse",
+        "image": "assets/img/ballet-lac-cygnes.jpg",
+        "description": "Un chef-d'œuvre intemporel interprété par l’un des plus grands ballets internationaux."
+    },
+    {
+        "id": 5,
+        "titre": "Festival de Musique Électronique",
+        "date": "2025-08-03",
+        "lieu": "Plage du Havre",
+        "prix": "Gratuit",
+        "categorie": "Concert",
+        "image": "assets/img/festival-electro.jpg",
+        "description": "Une journée de musique électro avec des DJ internationaux et une ambiance unique en bord de mer."
+    },
+    {
+        "id": 6,
+        "titre": "Pièce de Théâtre - \"Cyrano de Bergerac\"",
+        "date": "2025-10-05",
+        "lieu": "Théâtre de l’Hôtel de Ville",
+        "prix": "28€",
+        "categorie": "Théâtre",
+        "image": "assets/img/theatre-cyrano.jpg",
+        "description": "Une mise en scène spectaculaire du chef-d'œuvre d'Edmond Rostand."
+    },
+    {
+        "id": 7,
+        "titre": "Concert Symphonique - Beethoven & Mozart",
+        "date": "2025-11-20",
+        "lieu": "Le Volcan, Scène Nationale du Havre",
+        "prix": "35€",
+        "categorie": "Concert",
+        "image": "assets/img/concert-classique.jpg",
+        "description": "Un concert exceptionnel interprété par l'Orchestre National de France."
+    }
+]
