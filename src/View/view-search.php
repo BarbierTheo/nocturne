@@ -3,7 +3,7 @@
 
 
 <!-- Search Results Title -->
-<div class="mt-4">
+<div class="mt-4 d-flex flex-column justify-center">
     <form method="get">
         <div class="d-flex w-75 mx-auto gap-2 mb-3">
             <input type="text" name="event" class="form-control" placeholder="Rechercher" required>
@@ -13,7 +13,7 @@
         </div>
     </form>
 
-    <span class="h3 px-4 secret-sauce"><?= isset($_GET['event']) && !empty($_GET['event']) ? "Résultat pour '" . $_GET['event'] . "'" : "" ?></span>
+    <span class="h3 px-4 secret-sauce text-center"><?= isset($_GET['event']) && !empty($_GET['event']) ? "Résultat pour '" . $_GET['event'] . "'" : "" ?></span>
 </div>
 
 <!-- Search Results - Event Cards -->

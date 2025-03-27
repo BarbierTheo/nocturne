@@ -27,4 +27,5 @@ if (isset($_GET['event']) and !empty($_GET['event']) and is_numeric($_GET['event
 
 
 
+
 include_once "../View/view-event.php";
