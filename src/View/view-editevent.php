@@ -22,7 +22,7 @@
                 <!-- Image Upload -->
                 <div class="mb-3">
                     <label class="form-label">Changer l'image</label>
-                    <input type="file" class="form-control bg-dark text-light border-secondary">
+                    <input type="file" class="form-control bg-dark text-light border-secondary" name="img">
                 </div>
 
                 <!-- Event Name -->

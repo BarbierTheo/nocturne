@@ -6,14 +6,35 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
             <!-- Event Image -->
-            <div class="mb-4 d-flex justify-content-center">
-                <img src="../../assets/img/eventimg/<?= $event['event_img'] ?>" class="img-fluid rounded-3" alt="">
+            <div class="mb-4 d-flex justify-content-center position-relative">
+                <img src="../../assets/img/eventimg/<?= $event['event_img'] ?>" class="w-100 object-fit-cover rounded-3" alt="">
+                
+                <?php if (Participate::countParticipants($event['event_id']) >= 1) { ?>
+                        <span class="badge text-bg-light rounded-pill position-absolute top-0 end-0 m-2"><?= Participate::countParticipants($event['event_id']) ?> participant.e.s</span>
+                    <?php } ?>
+
+                <div class="position-absolute top-0 start-0 m-2">
+                <?php
+                        if (!empty($_SESSION)) {
+                            if ($event['user_id'] != $_SESSION['user_id']) {
+                                if (Participate::alreadyParticipate($event['event_id'], $_SESSION['user_id'])) { ?>
+                                    <button class="btn btn-danger" data-like="<?= $event['event_id'] ?>">
+                                        <i class="bi bi-heart-fill"></i>
+                                    </button>
+                                <?php } else { ?>
+                                    <button class="btn btn-outline-danger" data-like="<?= $event['event_id'] ?>">
+                                        <i class="bi bi-heart-fill"></i>
+                                    </button>
+                        <?php }
+                            }
+                        } ?>
+                </div>
             </div>
 
             <!-- Event Title -->
             <div class="d-flex justify-content-between my-2">
                 <span class="h2 secret-sauce"><?= $event['event_name'] ?></span>
-                <span class="fw-light fs-4 text-uppercase "><?= $event['genre_name'] ?></span>
+                <span class="fw-light fs-4 text-uppercase bg-light  py-2 px-2 text-dark"><?= $event['genre_name'] ?></span>
             </div>
 
             <!-- Event Meta -->

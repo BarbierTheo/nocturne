@@ -20,44 +20,44 @@
 
         <?php foreach (Events::showEvents(6) as $value) { ?>
 
-            <div class="col-12 col-md-4 mb-4">
-                <a href="controller-event.php?event=<?= $value['event_id'] ?>" class="bg-dark text-light text-decoration-none">
-                    <div class="position-relative">
-                        <img src="../../assets/img/eventimg/<?= $value['event_img'] ?>" alt="" class="rounded-3 w-100 object-fit-cover">
+            <div class="col-12 col-md-4 mb-4 d-flex flex-column">
+                <div class="position-relative">
+                    <img src="../../assets/img/eventimg/<?= $value['event_img'] ?>" alt="" class="rounded-3 w-100 object-fit-cover">
 
-                        <?php if (Participate::countParticipants($value['event_id']) >= 1) { ?>
-                            <span class="badge text-bg-light rounded-pill position-absolute top-0 end-0 m-2"><?= Participate::countParticipants($value['event_id']) ?> participant.e.s</span>
-                        <?php } ?>
+                    <?php if (Participate::countParticipants($value['event_id']) >= 1) { ?>
+                        <span class="badge text-bg-light rounded-pill position-absolute top-0 end-0 m-2"><?= Participate::countParticipants($value['event_id']) ?> participant.e.s</span>
+                    <?php } ?>
 
+                    <div class="position-absolute top-0 start-0 m-2">
                         <?php
                         if (!empty($_SESSION)) {
                             if ($value['user_id'] != $_SESSION['user_id']) {
-                                if (Participate::alreadyParticipate($value['event_id'], $_SESSION['user_id'])) {
-                        ?>
-                                    <button class="btn btn-danger position-absolute top-0 start-0 m-2">
+                                if (Participate::alreadyParticipate($value['event_id'], $_SESSION['user_id'])) { ?>
+                                    <button class="btn btn-danger" data-like="<?= $value['event_id'] ?>">
                                         <i class="bi bi-heart-fill"></i>
                                     </button>
                                 <?php } else { ?>
-                                    <button class="btn btn-outline-danger position-absolute top-0 start-0 m-2">
+                                    <button class="btn btn-outline-danger" data-like="<?= $value['event_id'] ?>">
                                         <i class="bi bi-heart-fill"></i>
                                     </button>
                         <?php }
                             }
                         } ?>
-
                     </div>
-                    <div class="mt-2">
-                        <p class="h5 secret-sauce"><?= $value['event_name'] ?></p>
-                        <div class="d-flex justify-content-between">
-                            <small><i class="bi bi-calendar-event"></i> <?= $value['event_date'] ?></small>
-                            <small><i class="bi bi-geo-alt"></i> <?= $value['event_emplacement'] ?></small>
-                        </div>
-                        <div class="d-flex justify-content-between mt-2">
-                            <small><i class="bi bi-tag"></i> <?= $value['event_price'] != 0 ? $value['event_price'] . " €" : "Gratuit" ?></small>
-                            <a href="controller-event.php?event=<?= $value['event_id'] ?>" class="btn btn-sm btn-outline-light">Voir détails</a>
-                        </div>
+
+                </div>
+                <a href="controller-event.php?event=<?= $value['event_id'] ?>" class="pt-2 text-decoration-none text-light">
+                    <p class="h5 secret-sauce"><?= $value['event_name'] ?></p>
+                    <div class="d-flex justify-content-between">
+                        <small><i class="bi bi-calendar-event"></i> <?= $value['event_date'] ?></small>
+                        <small><i class="bi bi-geo-alt"></i> <?= $value['event_emplacement'] ?></small>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <small><i class="bi bi-tag"></i> <?= $value['event_price'] != 0 ? $value['event_price'] . " €" : "Gratuit" ?></small>
+                        <a href="controller-event.php?event=<?= $value['event_id'] ?>" class="btn btn-sm btn-outline-light">Voir détails</a>
                     </div>
                 </a>
+
             </div>
 
         <?php } ?>

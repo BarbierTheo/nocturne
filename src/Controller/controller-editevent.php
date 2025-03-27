@@ -23,6 +23,7 @@ if (!isset($_SESSION['user_id'])) {
 
 if (!empty($_GET['event']) and is_numeric($_GET['event'])) {
     $event = Events::showEvent($_GET['event']);
+    
     if (empty($event) or $event['user_id'] != $_SESSION['user_id']) {
         header('location: controller-index.php');
         exit;
@@ -106,6 +107,35 @@ if (!empty($_GET['event']) and is_numeric($_GET['event'])) {
                 $stmt->bindValue(':emplacement', safeInput($_POST['emplacement']), PDO::PARAM_STR);
                 $stmt->bindValue(':price', safeInput($_POST['price']), PDO::PARAM_INT);
                 $stmt->bindValue(':genre', $_POST['genre'], PDO::PARAM_INT);
+
+
+                if (!empty($_FILES['img']['name'])) {
+
+                    $oldPic = $event['event_img'] ;
+                    $oldPic_path = "../../assets/img/eventimg/" . $oldPic;
+
+                    $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    var_dump($_FILES);
+
+                    // On édite la photo
+                    $pic_name = uniqid() . '_' . basename($_FILES["img"]["name"]);
+
+                    $sql = "UPDATE `events` 
+                    SET `event_img` = :image
+                    WHERE `event_id` = :event_id";
+
+                    $stmt = $pdo->prepare($sql);
+
+                    $stmt->bindValue(':image', $pic_name, PDO::PARAM_STR);
+                    $stmt->bindValue(':event_id', $_GET['event'], PDO::PARAM_INT);
+
+                    if ($stmt->execute()) {
+                        $user_directory = '../../assets/img/eventimg/' . $pic_name;
+                        move_uploaded_file($_FILES["img"]["tmp_name"], $user_directory);
+                        unlink("$oldPic_path");
+                    }
+                }
 
                 if ($stmt->execute()) {
                     header("Location: controller-event.php?event=" . $event['event_id']);
