@@ -12,8 +12,8 @@
                         <li><a href="controller-index.php" class="text-light fw-light text-decoration-none">Accueil</a></li>
                         <li><a href="controller-search.php" class="text-light fw-light text-decoration-none">Rechercher</a></li>
                         <li><a href="controller-addevent.php" class="text-light fw-light text-decoration-none">Ajouter un événement</a></li>
-                        <li><a href="#" class="text-light fw-light text-decoration-none">Intéressés</a></li>
-                        <li><a href="#" class="text-light fw-light text-decoration-none">Profil</a></li>
+                        <li><a href="controller-participation.php" class="text-light fw-light text-decoration-none">Evènements likés</a></li>
+                        <li><a href="controller-profile.php" class="text-light fw-light text-decoration-none">Profil</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">

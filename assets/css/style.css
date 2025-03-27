@@ -22,6 +22,10 @@ body {
 #heroheader {
     height: 60vh;
     background-color: #43354b;
+    background-image: url('../img/dj.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .secret-sauce {
@@ -40,4 +44,8 @@ body {
 .inter {
     font-family: "inter", sans-serif;
     font-optical-sizing: auto;
+}
+
+.empty{
+    min-height: 40vh;
 }

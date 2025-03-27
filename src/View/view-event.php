@@ -34,7 +34,7 @@
             <!-- Event Title -->
             <div class="d-flex justify-content-between my-2">
                 <span class="h2 secret-sauce"><?= $event['event_name'] ?></span>
-                <span class="fw-light fs-4 text-uppercase bg-light  py-2 px-2 text-dark"><?= $event['genre_name'] ?></span>
+                <span class="fw-light fs-5 text-uppercase bg-light  py-2 px-2 text-dark"><?= $event['genre_name'] ?></span>
             </div>
 
             <!-- Event Meta -->

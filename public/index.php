@@ -16,7 +16,7 @@
 <div class="container my-4 text-light">
     <h3 class="secret-sauce">Prochains évènements au Havre</h3>
     <hr>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center empty">
 
         <?php foreach (Events::showEvents(6) as $value) { ?>
 

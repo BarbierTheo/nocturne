@@ -15,6 +15,33 @@ class Events
         return $event;
     }
 
+    public static function showEventsCreated($user_id)
+    {
+        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "SELECT * FROM `events` WHERE `user_id` = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':id', $user_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $events;
+    }
+
+
+    public static function showEventsPerso($user_id)
+    {
+        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "SELECT * FROM `user_participate_event`
+                WHERE `user_id` = " . $user_id;
+
+        $stmt = $pdo->query($sql);
+        $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $events;
+    }
+
     public static function showEvents($howMany)
     {
         $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);

@@ -19,7 +19,7 @@ if (Participate::alreadyParticipate($_GET['event'], $_SESSION['user_id'])) {
     // Si l'user n'a pas liké, alors on l'ajoute du tableau likes
 } else {
 
-    $sql = "INSERT INTO `user_participate_event` (`user_id`, `event_id`) VALUES (" . $_SESSION['user_id'] . ", " . $_GET['event']. ")";
+    $sql = "INSERT INTO `user_participate_event` (`user_id`, `event_id`) VALUES (" . $_SESSION['user_id'] . ", " . $_GET['event'] . ")";
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute();

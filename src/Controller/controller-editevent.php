@@ -3,8 +3,6 @@ include_once "../../config.php";
 
 include_once "../Model/model-events.php";
 
-include_once "../../config.php";
-
 $errors = [];
 $classicregex = "/^[^#%^&*\][;}{=+\\|><\`~]*$/";
 
@@ -23,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
 
 if (!empty($_GET['event']) and is_numeric($_GET['event'])) {
     $event = Events::showEvent($_GET['event']);
-    
+
     if (empty($event) or $event['user_id'] != $_SESSION['user_id']) {
         header('location: controller-index.php');
         exit;
@@ -111,7 +109,7 @@ if (!empty($_GET['event']) and is_numeric($_GET['event'])) {
 
                 if (!empty($_FILES['img']['name'])) {
 
-                    $oldPic = $event['event_img'] ;
+                    $oldPic = $event['event_img'];
                     $oldPic_path = "../../assets/img/eventimg/" . $oldPic;
 
                     $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);

@@ -40,4 +40,6 @@ class Participate {
         return $participate['total'];
     }
 
+
+
 }
