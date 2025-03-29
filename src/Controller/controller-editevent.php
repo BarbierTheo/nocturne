@@ -93,7 +93,8 @@ if (!empty($_GET['event']) and is_numeric($_GET['event'])) {
                                 `event_adress` = :adress,
                                 `event_emplacement` = :emplacement,
                                 `event_price` = :price,
-                                `genre_id` = :genre";
+                                `genre_id` = :genre
+                        WHERE `event_id` = :event_id";
 
                 $stmt = $pdo->prepare($sql);
 
@@ -105,6 +106,7 @@ if (!empty($_GET['event']) and is_numeric($_GET['event'])) {
                 $stmt->bindValue(':emplacement', safeInput($_POST['emplacement']), PDO::PARAM_STR);
                 $stmt->bindValue(':price', safeInput($_POST['price']), PDO::PARAM_INT);
                 $stmt->bindValue(':genre', $_POST['genre'], PDO::PARAM_INT);
+                $stmt->bindValue(':event_id', $_GET['event'], PDO::PARAM_INT);
 
 
                 if (!empty($_FILES['img']['name'])) {
